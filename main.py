@@ -1,17 +1,19 @@
 import qrcode
 
 
+@dataclass
 class QRCodeGenerator:
-    def __init__(self, data, file_name):
-        """
-        Initialize the QR code generator with the data and file name.
+    """
+    Initialize the QR code generator with the data and file name.
 
-        Parameters:
-        data (str): The data (text or url) to be encoded in the QR code.
-        file_name (str): The name of the file where the QR code will be saved.
-        """
-        self.data = data
-        self.file_name = file_name
+    Parameters:
+    data (str): The data (text or url) to be encoded in the QR code.
+    file_name (str): The name of the file where the QR code will be saved.
+    """
+
+    data: str
+    file_name: str
+
 
     def create(self):
         """
