@@ -1,5 +1,5 @@
 import qrcode
-
+from dataclasses import dataclass
 
 @dataclass
 class QRCodeGenerator:
@@ -30,6 +30,9 @@ class QRCodeGenerator:
         # Save image to file
         img.save(self.file_name)
 
+    @staticmethod
+    def from_text(text: str, file_name: str) -> "QRCodeGenerator":
+        return QRCodeGenerator(text, file_name)
 
 # Example of usage
 qr = QRCodeGenerator("https://www.example.com", "qr_code.png")
